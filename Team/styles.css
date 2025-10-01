@@ -308,30 +308,3 @@ h1 {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 20px;
-    }
-
-    .team-section {
-        padding: 0 20px;
-    }
-
-    .team-row-top {
-        grid-template-columns: 1fr;
-    }
-    
-    .team-row-bottom {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    .tagline {
-        font-size: 24px;
-    }
-}
