@@ -67,5 +67,3 @@ async function fetchQuoteAPI() {
         refreshBtn.disabled = false;
     }
 }
-
-window.addEventListener('DOMContentLoaded', fetchQuote);
