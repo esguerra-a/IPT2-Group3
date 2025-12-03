@@ -1,10 +1,17 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Esguerra - Project Manager</title>
     <link rel="stylesheet" href="esguerra.css">
+    <style>
+        
+
+        @media (max-width: 768px) {
+            
+        }
+    </style>
 </head>
 <body>
     <a href="../Team/index.html" class="back-btn">
@@ -80,6 +87,31 @@
             </div>
         </div>
     </div>
+
+    <section class="quotes-section">
+        <div class="quote-card">
+            <div class="quote-header">
+                <h3 class="quote-title">
+                    <span class="quote-icon"></span>
+                    Daily Inspiration
+                </h3>
+                <button class="refresh-btn" id="refreshBtn" onclick="fetchQuoteAPI()">
+                    <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    New Quote
+                </button>
+            </div>
+
+            <div class="quote-content" id="quoteContent">
+                <div class="loading-spinner">
+                    <div class="quote-text">See what inspirational quote you will get!</div>
+                </div>
+            </div>
+        </div>
+    </section>
             
     <section class="skills-section">
         <div class="skills-container">
@@ -91,31 +123,35 @@
                     <div class="skill-items">
                         <div class="skill-item">
                             <div class="skill-name">HTML/CSS</div>
-                            <p class="skill-desc">Intermediate level</p>
+                            <p class="skill-desc">Intermediate</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">Javascript</div>
-                            <p class="skill-desc">Intermediate level</p>
+                            <p class="skill-desc">Intermediate</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">React</div>
-                            <p class="skill-desc">Intermediate level</p>
+                            <p class="skill-desc">Intermediate</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">React Native</div>
-                            <p class="skill-desc">Beginner level</p>
+                            <p class="skill-desc">Beginner</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Mobile Development (with Capacitor)</div>
+                            <p class="skill-desc">Intermediate</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">Git & GitHub</div>
-                            <p class="skill-desc">Intermediate level</p>
+                            <p class="skill-desc">Advanced</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">PHP</div>
-                            <p class="skill-desc">Beginner level</p>
+                            <p class="skill-desc">Beginner</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-name">MySQL</div>
-                            <p class="skill-desc">Beginner level</p>
+                            <p class="skill-desc">Beginner</p>
                         </div>
                     </div>
                 </div>
