@@ -34,26 +34,15 @@ document.querySelectorAll('.content-box').forEach(box => {
     observer.observe(box);
 });
 
-// ============================================
-// JOKEAPI INTEGRATION
-// ============================================
 
-/**
- * Function to fetch a programming joke from JokeAPI
- * API Endpoint: https://v2.jokeapi.dev/joke/Programming
- * This API returns either single-line jokes or two-part jokes (setup + delivery)
- */
-async function fetchProgrammingJoke() {
+async function fetchProgrammingJokeAPI() {
     const jokeContent = document.getElementById('jokeContent');
     
     // Show loading state
     jokeContent.innerHTML = '<div class="joke-loader">Loading joke...</div>';
     
     try {
-        // Make API request to JokeAPI
-        // Parameters explained:
-        // - /joke/Programming: Only get programming-related jokes
-        // - ?blacklistFlags=nsfw,religious,political,racist,sexist,explicit: Filter out inappropriate content
+        
         const response = await fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit');
         
         // Check if the request was successful
@@ -108,7 +97,6 @@ function displayJoke(jokeData) {
     }
     
     // Add the formatted joke to the page
-    
     jokeContent.appendChild(jokeText);
 }
 
@@ -117,11 +105,11 @@ function displayJoke(jokeData) {
  */
 // Load a joke when the page first loads
 document.addEventListener('DOMContentLoaded', function() {
-    fetchProgrammingJoke();
+    fetchProgrammingJokeAPI();
 });
 
 // Load a new joke when the refresh button is clicked
 const jokeRefreshBtn = document.getElementById('jokeRefreshBtn');
 if (jokeRefreshBtn) {
-    jokeRefreshBtn.addEventListener('click', fetchProgrammingJoke);
+    jokeRefreshBtn.addEventListener('click', fetchProgrammingJokeAPI);
 }
