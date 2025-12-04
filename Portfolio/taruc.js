@@ -108,6 +108,7 @@ function displayJoke(jokeData) {
     }
     
     // Add the formatted joke to the page
+    
     jokeContent.appendChild(jokeText);
 }
 
