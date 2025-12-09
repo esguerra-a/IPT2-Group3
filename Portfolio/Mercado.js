@@ -36,18 +36,18 @@ document.querySelectorAll('.content-box').forEach(box => {
 
 // Fun Facts/Useless Facts Section
 (function() {
-    let factCount = 0;
-    
+    // Function to fetch fun fact from API
     async function fetchFunFact() {
         const factContent = document.getElementById('factContent');
         const newJokeBtn = document.getElementById('newJokeBtn');
-        const factNumber = document.getElementById('factNumber');
         
-        if (!factContent || !newJokeBtn || !factNumber) {
+        // Check if elements exist
+        if (!factContent || !newJokeBtn) {
             console.error('Fun Facts elements not found');
             return;
         }
         
+        // Show loading state
         factContent.innerHTML = `
             <div class="fact-loading">
                 <div class="fact-spinner"></div>
@@ -55,9 +55,11 @@ document.querySelectorAll('.content-box').forEach(box => {
             </div>
         `;
         
+        // Disable button while loading
         newJokeBtn.disabled = true;
         
         try {
+            // Fetch fact from Useless Facts API
             const response = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
             
             if (!response.ok) {
@@ -66,12 +68,11 @@ document.querySelectorAll('.content-box').forEach(box => {
             
             const data = await response.json();
             
-            factCount++;
-            factNumber.textContent = `Fact #${factCount}`;
-            
+            // Display the fact
             displayFact(data);
             
         } catch (error) {
+            // Show error message
             factContent.innerHTML = `
                 <div class="fact-error">
                     <p>⚠️ Oops!</p>
@@ -80,22 +81,26 @@ document.querySelectorAll('.content-box').forEach(box => {
             `;
             console.error('Error fetching fun fact:', error);
         } finally {
+            // Re-enable button
             newJokeBtn.disabled = false;
         }
     }
     
+    // Function to display fact
     function displayFact(fact) {
         const factContent = document.getElementById('factContent');
         
         factContent.innerHTML = `
             <p class="fact-text">${fact.text}</p>
-            <p class="fact-source">Source: ${fact.source || 'Useless Facts API'}</p>
         `;
     }
     
+    // Initialize when DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
+        // Fetch initial fact
         fetchFunFact();
         
+        // Add click event to button
         const newJokeBtn = document.getElementById('newJokeBtn');
         if (newJokeBtn) {
             newJokeBtn.addEventListener('click', fetchFunFact);

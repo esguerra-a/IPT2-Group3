@@ -798,35 +798,11 @@ body::after {
 }
 
 .fun-facts-box {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    padding: 28px;
+    border-radius: 20px;
+    padding: 20px;
     margin-top: 20px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.fun-facts-box::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 3px;
-    height: 0;
-    background: linear-gradient(180deg, #ff6b35, #ff8f65);
-    transition: height 0.4s ease;
-}
-
-.fun-facts-box:hover::before {
-    height: 100%;
-}
-
-.fun-facts-box:hover {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border-color: rgba(255, 107, 53, 0.4);
-    transform: translateX(8px);
 }
 
 .fun-facts-header {
