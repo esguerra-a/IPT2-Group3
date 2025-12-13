@@ -796,3 +796,180 @@ body::after {
         padding: 28px;
     }
 }
+
+.fun-facts-box {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.fun-facts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fun-facts-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff6b35;
+    margin: 0;
+}
+
+.new-joke-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #ff6b35, #ff8f65);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
+    font-family: inherit;
+}
+
+.new-joke-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.5);
+}
+
+.new-joke-btn:active {
+    transform: translateY(0);
+}
+
+.new-joke-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.new-joke-btn:disabled:hover {
+    transform: none;
+}
+
+.new-joke-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.new-joke-btn:disabled svg {
+    animation: spin 1s linear infinite;
+}
+
+.fact-content {
+    min-height: 80px;
+    margin-bottom: 16px;
+}
+
+.fact-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 80px;
+}
+
+.fact-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 107, 53, 0.2);
+    border-top: 3px solid #ff6b35;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.fact-loading p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.fact-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 12px 0;
+    animation: fadeIn 0.5s ease;
+}
+
+.fact-source {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.fact-counter {
+    text-align: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact-counter span {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 107, 53, 0.12);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    font-size: 12px;
+    color: #ff6b35;
+    font-weight: 600;
+}
+
+.fact-error {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 107, 53, 0.8);
+}
+
+.fact-error p:first-child {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.fact-error p:last-child {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@media (max-width: 768px) {
+    .fun-facts-box {
+        padding: 24px;
+    }
+    
+    .fun-facts-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .new-joke-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

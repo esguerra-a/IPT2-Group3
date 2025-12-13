@@ -33,3 +33,65 @@ document.querySelectorAll('.content-box').forEach(box => {
     box.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(box);
 });
+
+// Fun Facts/Useless Facts Section
+(function() {
+    async function fetchFunFact() {
+        const factContent = document.getElementById('factContent');
+        const newJokeBtn = document.getElementById('newJokeBtn');
+        
+        if (!factContent || !newJokeBtn) {
+            console.error('Fun Facts elements not found');
+            return;
+        }
+        
+        factContent.innerHTML = `
+            <div class="fact-loading">
+                <div class="fact-spinner"></div>
+                <p>Loading fun fact...</p>
+            </div>
+        `;
+        
+        newJokeBtn.disabled = true;
+        
+        try {
+            const response = await fetch('https://uselessfacts.jsph.pl/random.json?language=en');
+            
+            if (!response.ok) {
+                throw new Error('Failed to fetch fun fact');
+            }
+            
+            const data = await response.json();
+            
+            displayFact(data);
+            
+        } catch (error) {
+            factContent.innerHTML = `
+                <div class="fact-error">
+                    <p>⚠️ Oops!</p>
+                    <p>${error.message}</p>
+                </div>
+            `;
+            console.error('Error fetching fun fact:', error);
+        } finally {
+            newJokeBtn.disabled = false;
+        }
+    }
+    
+    function displayFact(fact) {
+        const factContent = document.getElementById('factContent');
+        
+        factContent.innerHTML = `
+            <p class="fact-text">${fact.text}</p>
+        `;
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchFunFact();
+        
+        const newJokeBtn = document.getElementById('newJokeBtn');
+        if (newJokeBtn) {
+            newJokeBtn.addEventListener('click', fetchFunFact);
+        }
+    });
+})();
