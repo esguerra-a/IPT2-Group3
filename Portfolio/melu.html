@@ -14,9 +14,9 @@
     Back
   </a>
 
-  <!-- Main Content -->
+
   <div class="container">
-    <!-- Left Section -->
+    
     <div class="left-section">
       <div class="breadcrumb">Full-Stack Developer</div>
 
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <!-- Right Section -->
+  
     <div class="right-section">
       <div class="profile-card">
         <div class="profile-image">
@@ -86,13 +86,71 @@
     </div>
   </div>
 
-  <!-- Skills Section - Full Width -->
+  
+  <section class="bible-verse-section">
+    <div class="bible-container">
+      <h2 class="bible-title">Bible Verse Advisor</h2>
+      <p class="bible-subtitle">How are you feeling today?</p>
+
+      <div class="feelings-container">
+        <button class="feeling-btn" data-feeling="sad">
+          <span class="feeling-emoji">😢</span>
+          <span class="feeling-text">Sad</span>
+        </button>
+        <button class="feeling-btn" data-feeling="anxious">
+          <span class="feeling-emoji">😰</span>
+          <span class="feeling-text">Anxious</span>
+        </button>
+        <button class="feeling-btn" data-feeling="happy">
+          <span class="feeling-emoji">😊</span>
+          <span class="feeling-text">Happy</span>
+        </button>
+        <button class="feeling-btn" data-feeling="stressed">
+          <span class="feeling-emoji">😓</span>
+          <span class="feeling-text">Stressed</span>
+        </button>
+        <button class="feeling-btn" data-feeling="lonely">
+          <span class="feeling-emoji">😔</span>
+          <span class="feeling-text">Lonely</span>
+        </button>
+        <button class="feeling-btn" data-feeling="grateful">
+          <span class="feeling-emoji">🙏</span>
+          <span class="feeling-text">Grateful</span>
+        </button>
+        <button class="feeling-btn" data-feeling="afraid">
+          <span class="feeling-emoji">😨</span>
+          <span class="feeling-text">Afraid</span>
+        </button>
+        <button class="feeling-btn" data-feeling="hopeless">
+          <span class="feeling-emoji">😞</span>
+          <span class="feeling-text">Hopeless</span>
+        </button>
+      </div>
+
+      <div class="verse-display" style="display:none;">
+        <blockquote class="verse-text"></blockquote>
+        <p class="verse-reference"></p>
+        <button class="refresh-btn">Get Another Verse</button>
+      </div>
+
+      <div class="loading-spinner" style="display:none;">
+        <div class="spinner"></div>
+        <p>Finding your verse...</p>
+      </div>
+
+      <div class="error-message" style="display:none;">
+        Unable to load verse. Please try again.
+      </div>
+    </div>
+  </section>
+
+
   <section class="skills-section">
     <div class="skills-container">
       <h2 class="skills-title">Skills & Expertise</h2>
 
       <div class="skills-grid">
-        <!-- Core Programming Skills -->
+       
         <div class="skill-category">
           <h3 class="category-title">Core Programming</h3>
           <div class="skill-items">
@@ -115,7 +173,7 @@
           </div>
         </div>
 
-        <!-- Web Development Skills -->
+   
         <div class="skill-category">
           <h3 class="category-title">Web Development</h3>
           <div class="skill-items">
@@ -134,7 +192,7 @@
           </div>
         </div>
 
-        <!-- Professional Skills -->
+        
         <div class="skill-category">
           <h3 class="category-title">Professional Skills</h3>
           <div class="skill-items">
